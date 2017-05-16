@@ -5,7 +5,7 @@ import {SplashScreen} from "@ionic-native/splash-screen";
 
 import {HomePage} from "../pages/home/home";
 import {Deeplinks} from "@ionic-native/deeplinks";
-// import {ProdutoPage} from "../pages/produto/produto";
+import {ProdutoPage} from "../pages/produto/produto";
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,17 +24,17 @@ export class MyApp {
       splashScreen.hide();
 
       // // Deeplink
-      // deeplinks.routeWithNavController(this.navChild, {
-      //   '/produto/:id': ProdutoPage,
-      // }).subscribe((match) => {
-      //   // match.$route - the route we matched, which is the matched entry from the arguments to route()
-      //   // match.$args - the args passed in the link
-      //   // match.$link - the full link data
-      //   console.log('Native route', match);
-      // }, (nomatch) => {
-      //   // nomatch.$link - the full link data
-      //   //console.log('Got a deeplink that didn\'t match', nomatch);
-      // });
+      deeplinks.routeWithNavController(this.navChild, {
+        '/produto/:codigo': ProdutoPage,
+      }).subscribe((match) => {
+        // match.$route - the route we matched, which is the matched entry from the arguments to route()
+        // match.$args - the args passed in the link
+        // match.$link - the full link data
+        console.log('Native route', match);
+      }, (nomatch) => {
+        // nomatch.$link - the full link data
+        //console.log('Got a deeplink that didn\'t match', nomatch);
+      });
     });
 
   }

@@ -20,14 +20,15 @@ import {Deeplinks} from "@ionic-native/deeplinks";
     ProdutoPageModule,
     IonicModule.forRoot(MyApp,
       {
-        //locationStrategy: 'path',
+        locationStrategy: 'path',
       },
       {
         // DeepLinker
         links: [
           {component: ProdutoPage, name: 'Produto', segment: 'produto/:codigo'},
         ]
-      })
+      }
+      )
   ],
   bootstrap: [IonicApp],
   entryComponents: [
